@@ -55,4 +55,13 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: 'js/built.js'
     },
+
+    // 开发环境配置Source Map，方便精准定位错误位置，防止开发调试错误行号无法正确定位
+    devtool: 'eval-source-map',
+
+    // 实际开发环境关闭Source Map精准定位功能，只显示行号，不显示源代码;或者直接不配置Source Map
+    // devtool: 'nosources-source-map',
+
+
+
 }
