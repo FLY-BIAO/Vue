@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 module.exports = {
     // mode  有两种模式，'development'和'production'
     mode: 'development',
@@ -40,7 +42,8 @@ module.exports = {
     },
     
     // 插件的配置
-    plugins: [
+    plugins: 
+        [new CleanWebpackPlugin(),
         new HtmlPlugin({ template: './src/index.html', filename: './index.html' }),
     ],
 
