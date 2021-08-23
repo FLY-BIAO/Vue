@@ -1,6 +1,9 @@
 const path = require('path');
+
+// html插件
 const HtmlPlugin = require('html-webpack-plugin')
 
+// clean插件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
@@ -42,8 +45,8 @@ module.exports = {
     },
     
     // 插件的配置
-    plugins: 
-        [new CleanWebpackPlugin(),
+    plugins: [
+        new CleanWebpackPlugin(),   // 自动删除输出的旧包
         new HtmlPlugin({ template: './src/index.html', filename: './index.html' }),
     ],
 
