@@ -62,6 +62,11 @@ module.exports = {
     // 实际开发环境关闭Source Map精准定位功能，只显示行号，不显示源代码;或者直接不配置Source Map
     // devtool: 'nosources-source-map',
 
-
+    resolve: {
+        alias: {
+            // 配置@，告诉webpack文件的目录路径，方便文件查找、引入···
+            '@':path.join(__dirname, './src')
+        }
+    }
 
 }
