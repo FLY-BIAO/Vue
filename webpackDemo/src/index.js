@@ -2,7 +2,7 @@ import $ from 'jquery'
 
 import './js/es6.js'
 
-// 无需变量接受，就算接受也是undefined
+// 无需变量接收，就算接收也是undefined
 import './css/index.css'
 import './css/index.less'
 
