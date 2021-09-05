@@ -1,5 +1,5 @@
 <template>
-  <div class="left-container">
+  <div class="left-container flex-clo-center">
       <h3>Left 组件---{{count}}</h3>
       <p>父组件的count是: {{ homecount }}</p>
       <p>父组件的msg是: {{ msg }}</p>

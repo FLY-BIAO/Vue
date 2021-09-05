@@ -6,7 +6,7 @@
       <button @click="changeMsg()">changeMsg</button>
       <button @click="changeInfo()">changeInfo</button>
       </div>
-    <div style="width: 900px;margin:0 auto">
+    <div class="flex-center">
       <Left :homecount="homecount" :msg="msg" :userinfo="userinfo"></Left>
       <Right @addNumber="getNumber"></Right>
     </div>
@@ -53,5 +53,15 @@ div[class$="container"] {
   float: left;
   width: 400px;
 }
-
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
 </style>
