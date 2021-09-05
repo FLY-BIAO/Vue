@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home flex-col-center">
     <h1>Home根组件---{{ homecount }}</h1>
     <div>{{userinfo}}</div>
     <div>
@@ -10,10 +10,14 @@
       <Left :homecount="homecount" :msg="msg" :userinfo="userinfo"></Left>
       <Right @addNumber="getNumber"></Right>
     </div>
+    <div class="block-col-center"><button @click="getBookList">请求</button></div>
+    <div>{{ bookList }}</div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 // @ is an alias to /src
 import Left from '@/components/Left.vue'
 import Right from '@/components/Right.vue'
@@ -27,7 +31,9 @@ export default {
         name: '钰彪',
         age: 21
       },
-      msg: '你好啊！'
+      msg: '你好啊！',
+      bookList: [],
+      comNamer: 'Right'
     }
   },
   components: {
@@ -43,6 +49,17 @@ export default {
     },
     getNumber(val) {
       this.homecount = val
+    },
+    async getBookList() { // async异步
+      // axios 调用后返回一个 Promise实例，可以调用async/await来取值
+      // 解构赋值，‘：’ 将解构后的data赋值给res
+      const { data: res } = await axios.get('http://www.liulongbin.top:3006/api/getbooks')
+      console.log('getdata')
+      console.log(res.data)
+      this.bookList = res.data
+    },
+    gotoComp(){
+      this.$router.push('/comp')
     }
   }
 }
