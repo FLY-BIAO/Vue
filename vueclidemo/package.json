@@ -7,8 +7,16 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^35.3.2",
+    "@ckeditor/ckeditor5-dev-utils": "^31.1.13",
+    "@ckeditor/ckeditor5-dev-webpack-plugin": "^31.1.13",
+    "@ckeditor/ckeditor5-vue2": "^3.0.1",
+    "@tinymce/tinymce-vue": "^3.0.1",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "postcss-loader": "^4.3.0",
+    "raw-loader": "^4.0.2",
+    "tinymce": "^5.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

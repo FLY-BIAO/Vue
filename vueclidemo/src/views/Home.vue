@@ -12,15 +12,25 @@
     </div>
     <div class="block-col-center"><button @click="getBookList">请求</button></div>
     <div>{{ bookList }}</div>
+    <tinymce
+        ref="editor"
+        v-model="msg"
+        :disabled="disabled"
+        @onClick="onClick"
+    />
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 // @ is an alias to /src
 import Left from '@/components/Left.vue'
 import Right from '@/components/Right.vue'
+import tinymce from '@/components/RichEdit.vue'
+
 
 export default {
   name: 'Home',
@@ -33,12 +43,18 @@ export default {
       },
       msg: '你好啊！',
       bookList: [],
-      comNamer: 'Right'
+      comNamer: 'Right',
+      editor: ClassicEditor,
+      editorData: '<p>Content of the editor.</p>',
+      editorConfig: {
+          // The configuration of the editor.
+      }
     }
   },
   components: {
     Left,
-    Right
+    Right,
+    tinymce,
   },
   methods: {
     changeMsg() {

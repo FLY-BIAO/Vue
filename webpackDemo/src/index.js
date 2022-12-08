@@ -15,5 +15,3 @@ $(function(){
     $('li:odd').css('background-color', 'pink')
     $('li:even').css('background-color', 'skyblue')
 })
-
-console.log(aaa)
