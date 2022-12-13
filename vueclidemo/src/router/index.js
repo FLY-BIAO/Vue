@@ -6,17 +6,17 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home
-  },{
+  }, {
     path: '/comp',
     name: 'Comp',
     component: () => import('../views/Comp.vue')
-  },{
-    path: '/solt',
-    name: 'Solt',
-    component: () => import('../views/Solt.vue')
+  }, {
+    path: '/',
+    name: 'Test',
+    component: () => import('../views/Test.vue')
   }
 ]
 
